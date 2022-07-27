@@ -1,0 +1,681 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+:root {
+ --colorButton: rgb(0, 0, 0);
+ --font1: 'Poppins', sans-serif;
+}
+body h1, p {
+  color: rgb(0, 0, 0);
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding: 5px;
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+}
+.header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header-menu-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+}
+.logo-name {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-family: var(--font1);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.header-menu-button div {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  margin: 2px 0;
+  transition: all 0.3s ease-in-out;
+  will-change: transform;
+}
+.header.active .header-menu-button div:first-child {
+  transform: translateY(9px) rotate(45deg);
+}
+.header.active .header-menu-button div:nth-child(2) {
+  transform: translateX(10px);
+  opacity: 0;
+}
+.header.active .header-menu-button div:last-child {
+  transform: translateY(-5px) rotate(-45deg);
+}
+.header-menu {
+  position: absolute;
+  width: 50%;
+  min-height: calc(100vh - 70px);
+  top: 70px;
+  left: 0;
+  background-color: rgb(7, 7, 7);
+  padding: 16px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+.header.active .header-menu {
+  transform: translateX(0);
+}
+.header-menu ul {
+  display: flex;
+  flex-direction: column;
+}
+.header-menu ul li a {
+  display: flex;
+  margin: 10px 0;
+  color: rgb(255, 255, 255);
+  font-family: var(--font1);
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-decoration: none;
+}
+#copos {
+  overflow: auto;
+  background: transparent;
+  width: 100%;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+}
+#copos::-webkit-scrollbar {
+  background: transparent;
+}
+#copos::-webkit-scrollbar-button {
+  background: transparent;
+}
+#copos::-webkit-scrollbar-corner {
+  background: transparent;
+}
+#copos::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+#copos::-webkit-scrollbar-track {
+  background: transparent;
+}
+#copos div {
+  width:60%;
+  max-width:280px;
+  margin: 10px;
+  margin-top: 3%;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0,0.3);
+}
+#copos div img {
+  width:55%;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+#copos div a button {
+  width: 70%;
+ 
+  background:   var(--colorButton);
+  color: white;
+  border-radius: 6px;
+  border: none;
+  
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0,0.3);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 1.0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#copos div a {
+
+text-decoration: none;
+  margin-top: 10%;
+  margin-bottom: 8%;
+
+}
+  
+  
+.copos h1{
+  font-family: var(--font1);
+  font-size: 1.87rem;
+  text-align: center;
+  margin-top: 10%;
+  
+}
+#copos div h1 {
+  color: rgb(0, 0, 0);
+  font-family: var(--font1);
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+#copos div p {
+  color: rgb(0, 0, 0);
+  font-family: var(--font1);
+  font-size: 1.2rem;
+}
+.tacas h1{
+  font-family: var(--font1);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 10%;
+  text-transform: uppercase;
+}
+.canecas h1{
+  font-family: var(--font1);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 10%;
+  text-transform: uppercase;
+}
+.banner {
+  width: 100%;
+  max-width:1000px;
+  margin: auto;
+  height: 400px;
+  background-color:blue;
+  overflow: hidden;
+
+
+}
+.banner div  {
+
+  width: 60%;
+  margin:auto;
+  text-align: center;
+  background-color: red;
+  position: relative;
+  top: 30%;
+ 
+}
+
+.banner img {
+
+
+  width: 80%;
+  display:block;
+  margin: auto;
+  margin-top: 40%;
+  max-width:400px;
+ 
+}
+
+.long-drink-more {
+  background: rgb(230, 230, 230);
+}
+footer {
+  width: 100%;
+  height: 50px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.camisetas-jateamento {
+  display:flex;
+  flex-direction: column;
+  width:90%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 7%;
+  padding-top: 5%;
+}
+.content-camiseta h1, p, button {
+  text-align: center;
+  margin: auto;
+  display:block;
+  font-family: var(--font1);
+  width: 90%;
+}
+.content-camiseta h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.87rem;
+  font-family: var(--font1);
+  margin-top: 20px;
+}
+.content-camiseta p {
+  font-size: 1.2rem;
+  padding-bottom: 30px;
+}
+.content-camiseta button {
+  font-size: 1rem;
+  width: 50%;
+  max-width: 200px;
+  padding: 10px;
+  border-radius: 20px;
+  border:none;
+  background: var(--colorButton);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0,0.3);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  cursor: pointer;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-whats {
+
+  width:12%;
+  margin-right: 6%;
+}
+#copos div button img{
+
+  width:13%;
+  margin-right: 6%;
+}
+.content-camiseta a{
+  text-decoration: none;
+}
+.img-camiseta {
+  width: 70%;
+  max-width: 300px;
+  border-radius: 20px;
+  margin: auto;
+  display:block;
+}
+footer p {
+  color: white;
+  font-family: var(--font1);
+  font-size: 0.64rem;
+}
+.contact h1 {
+ text-align: center;
+ margin-top: 7%;
+ margin-bottom: 5%;
+ font-size: 1.87rem;
+ font-family: var(--font1)
+}
+.contact .maps {
+  width: 65%;
+  height: 35vh;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.contact button {
+  font-size: 1rem;
+  width: 50%;
+  padding: 10px;
+  border-radius: 20px;
+  border:none;
+  background: var(--colorButton);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0,0.3);
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+.logo-name {
+  margin-left: 2%;
+}
+.banner {
+  width: 80%;
+  min-width: 850px;
+  max-width:1000px;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center center;
+ 
+  
+
+}
+
+.header-left,
+.header-center {
+  display: none;
+}
+.header-menu {
+  position: relative;
+  display: flex;
+  min-height: auto;
+  background-color: transparent;
+  top: 0;
+  width: auto;
+  transform: none;
+}
+.header-menu ul {
+flex-direction: row;
+}
+.header-menu ul li {
+  margin: 0 10px;
+}
+.header-menu ul li a {
+  font-size: 13px;
+  font-weight: bold;
+}
+::-webkit-scrollbar-button{
+  background: black;
+}
+::-webkit-scrollbar-track{
+  background: black;
+}
+::-webkit-scrollbar-thumb{
+  background: black;
+}
+#copos {
+  overflow: none;
+  background: transparent;
+  width: 90%;
+  max-width: 1000px;
+  height:auto;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 5%;
+}
+.copos h1 {
+
+
+  font-size: 2.5rem;
+  margin-top: 6%;
+}
+#copos div {
+  width:30%;
+  margin: 10px;
+  margin-top: 1%;
+  border-radius: 10px;
+  flex-shrink: 0;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid rgb(199, 197, 197);
+}
+#copos div a  button {
+  width: 66%;
+  background:   var(--colorButton);
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+  
+}
+#copos div a {
+
+text-decoration: none;
+  margin-top: 8%;
+  margin-bottom: 10%;
+
+}
+#copos div a:visited {
+
+  text-decoration: none;
+    
+  
+  }
+#copos div a button:hover {
+  width: 66%;
+  
+  background:   rgb(0, 0, 0);
+  color: rgb(0, 179, 255);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  animation: both;
+  animation-duration: 3s;
+  margin: auto;
+}
+.img-camiseta {
+  width: 40%;
+  max-width: 300px;
+  margin-bottom: 3%;
+}
+.camisetas-jateamento {
+  width: 90%;
+  max-width:1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0,0.1);
+  padding-top: 2%;
+  margin-bottom: 3%;
+  
+}
+.camiseta2{
+
+  padding-bottom: 4%;
+  
+  }
+.content-camiseta {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 7%;
+  
+}
+.img2 {
+margin-bottom: 1%;
+}
+.content-camiseta h1 {
+  font-size: 2.5rem;
+}
+.contact{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 3%;
+}
+.content-camiseta button {
+  margin-bottom: 10%;
+  width: 50% ;
+  padding: 2%;
+  max-width:200px;
+}
+.maps {
+  width: 40%;
+  max-width: 400px;
+  margin-left: 5%;
+  margin-right: 2%;
+  box-shadow: 2px 2px 5px black;
+
+}
+.contact div .maps {
+  width:100%;
+  margin:auto;
+  border-radius: 10px;
+}
+
+.responsivity-contact {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-top: 5%;
+  
+ 
+}
+.address {
+  margin-bottom: 50px;
+}
+footer p {
+  font-size: 1rem;
+}
+
+
+
+
+
+}
