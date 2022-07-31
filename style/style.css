@@ -130,6 +130,7 @@ table {
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 
@@ -337,22 +338,13 @@ text-decoration: none;
   width: 100%;
   max-width:1000px;
   margin: auto;
-  height: 400px;
-  background-color:blue;
-  overflow: hidden;
-
-
-}
-.banner div  {
-
-  width: 60%;
-  margin:auto;
-  text-align: center;
-  background-color: red;
-  position: relative;
-  top: 30%;
+ max-height: 4000px;
+  background-color:rgb(70, 68, 68);
  
+overflow: hidden;
+
 }
+
 
 .banner img {
 
@@ -360,9 +352,10 @@ text-decoration: none;
   width: 80%;
   display:block;
   margin: auto;
-  margin-top: 40%;
+  margin-top: 20%;
   max-width:400px;
- 
+ transform: translateY(30%)
+  
 }
 
 .long-drink-more {
@@ -485,10 +478,7 @@ footer p {
   width: 80%;
   min-width: 850px;
   max-width:1000px;
-  height: 400px;
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-position: center center;
+ 
  
   
 
